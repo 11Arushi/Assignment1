@@ -1,0 +1,134 @@
+Microsoft Windows [Version 10.0.22631.4460]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\arush>cd Desktop
+
+C:\Users\arush\Desktop>mkdir Github
+A subdirectory or file Github already exists.
+
+C:\Users\arush\Desktop>cd Github
+
+C:\Users\arush\Desktop\Github>git init
+Initialized empty Git repository in C:/Users/arush/Desktop/Github/.git/
+
+C:\Users\arush\Desktop\Github>echo "Hello, Git!" > hello.txt
+
+C:\Users\arush\Desktop\Github>git add hello.txt
+
+C:\Users\arush\Desktop\Github>git commit -m "Initial commit with hello.txt"
+[master (root-commit) 478bcbc] Initial commit with hello.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+C:\Users\arush\Desktop\Github>git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+
+C:\Users\arush\Desktop\Github>git branch
+* feature-branch
+  master
+
+C:\Users\arush\Desktop\Github>git remote add origin https://github.com/11Arushi/Assignment1.git
+
+C:\Users\arush\Desktop\Github>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/11Arushi/Assignment1.git'
+
+C:\Users\arush\Desktop\Github>git branch
+* feature-branch
+  master
+
+C:\Users\arush\Desktop\Github>git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 243 bytes | 243.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/11Arushi/Assignment1/pull/new/master
+remote:
+To https://github.com/11Arushi/Assignment1.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+C:\Users\arush\Desktop\Github>git branch -m master main
+
+C:\Users\arush\Desktop\Github>git push -u origin main
+To https://github.com/11Arushi/Assignment1.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/11Arushi/Assignment1.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\arush\Desktop\Github>git remote set-url origin https://github.com/11Arushi/Assignment1.git
+
+C:\Users\arush\Desktop\Github>git remote -v
+origin  https://github.com/11Arushi/Assignment1.git (fetch)
+origin  https://github.com/11Arushi/Assignment1.git (push)
+
+C:\Users\arush\Desktop\Github>git init
+Reinitialized existing Git repository in C:/Users/arush/Desktop/Github/.git/
+
+C:\Users\arush\Desktop\Github>echo "Hello World" > newfile.txt
+
+C:\Users\arush\Desktop\Github>git add newfile.txt
+
+C:\Users\arush\Desktop\Github>git commit -m "Add newfile.txt"
+[feature-branch 25a05c3] Add newfile.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+
+C:\Users\arush\Desktop\Github>git checkout -b new-branch
+Switched to a new branch 'new-branch'
+
+C:\Users\arush\Desktop\Github>git remote add origin https://github.com/11Arushi/Assignment1.git
+error: remote origin already exists.
+
+C:\Users\arush\Desktop\Github>git push -u origin new-branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 147.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'new-branch' on GitHub by visiting:
+remote:      https://github.com/11Arushi/Assignment1/pull/new/new-branch
+remote:
+To https://github.com/11Arushi/Assignment1.git
+ * [new branch]      new-branch -> new-branch
+branch 'new-branch' set up to track 'origin/new-branch'.
+
+C:\Users\arush\Desktop\Github>git stash
+No local changes to save
+
+C:\Users\arush\Desktop\Github>git log
+commit 25a05c31109c194e6b9cfb730afb3a8da3cce5eb (HEAD -> new-branch, origin/new-branch, feature-branch)
+Author: Arushi Anya <arushianya2019@gmail.com>
+Date:   Tue Dec 31 18:29:27 2024 +0530
+
+    Add newfile.txt
+
+commit 478bcbc60092ead7b5aa644cd2a7827f9dfa54a1 (origin/master, main)
+Author: Arushi Anya <arushianya2019@gmail.com>
+Date:   Tue Dec 31 18:19:51 2024 +0530
+
+    Initial commit with hello.txt
+
+C:\Users\arush\Desktop\Github>git rebase -i HEAD~n
+fatal: invalid upstream 'HEAD~n'
+
+C:\Users\arush\Desktop\Github>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/master'.
+
+C:\Users\arush\Desktop\Github>git merge new-branch
+Updating 478bcbc..25a05c3
+Fast-forward
+ newfile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+
+GitHub link:-https://github.com/11Arushi/Assignment1
