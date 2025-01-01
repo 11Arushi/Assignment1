@@ -1,0 +1,126 @@
+Microsoft Windows [Version 10.0.22631.4460]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\arush>cd desktop
+
+C:\Users\arush\Desktop>cd Github
+
+C:\Users\arush\Desktop\Github>ren .gitignore.txt .gitignore
+A duplicate file name exists, or the file
+cannot be found.
+
+C:\Users\arush\Desktop\Github>dir
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is 8092-34F6
+
+ Directory of C:\Users\arush\Desktop\Github
+
+31-12-2024  23:27    <DIR>          .
+31-12-2024  18:12    <DIR>          ..
+31-12-2024  23:27                 3 .gitignore
+31-12-2024  23:33               201 .gitignore.txt
+31-12-2024  22:19    <DIR>          CollaborativeRepo
+31-12-2024  19:06                32 file.txt
+31-12-2024  18:19                16 hello.txt
+31-12-2024  18:31                16 newfile.txt
+               5 File(s)            268 bytes
+               3 Dir(s)  347,135,574,016 bytes free
+
+C:\Users\arush\Desktop\Github>git stash -u
+Ignoring path CollaborativeRepo/
+Saved working directory and index state WIP on main: bd397ea Add .gitignore file
+
+C:\Users\arush\Desktop\Github>git add .
+warning: adding embedded git repository: CollaborativeRepo
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> CollaborativeRepo
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached CollaborativeRepo
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config advice.addEmbeddedRepo false"
+
+C:\Users\arush\Desktop\Github>git commit -m "Fix .gitignore and ignore CollaborativeRepo"
+[main c667f38] Fix .gitignore and ignore CollaborativeRepo
+ 1 file changed, 1 insertion(+)
+ create mode 160000 CollaborativeRepo
+
+C:\Users\arush\Desktop\Github>git push origin main
+To https://github.com/11Arushi/Assignment1.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/11Arushi/Assignment1.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\arush\Desktop\Github>git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 221 bytes | 12.00 KiB/s, done.
+From https://github.com/11Arushi/Assignment1
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+
+C:\Users\arush\Desktop\Github>git add <file_with_conflict>
+The syntax of the command is incorrect.
+
+C:\Users\arush\Desktop\Github>git commit -m "Resolve merge conflicts"
+On branch main
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+C:\Users\arush\Desktop\Github>git push origin main
+To https://github.com/11Arushi/Assignment1.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/11Arushi/Assignment1.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\arush\Desktop\Github>git pull --rebase origin main
+From https://github.com/11Arushi/Assignment1
+ * branch            main       -> FETCH_HEAD
+warning: skipped previously applied commit 478bcbc
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+warning: unable to rmdir 'CollaborativeRepo': Directory not empty
+Successfully rebased and updated refs/heads/main.
+
+C:\Users\arush\Desktop\Github>git add <file_with_conflict>
+The syntax of the command is incorrect.
+
+C:\Users\arush\Desktop\Github>git status
+On branch main
+Your branch and 'origin/master' have diverged,
+and have 6 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+nothing to commit, working tree clean
+
+C:\Users\arush\Desktop\Github>git add file1.txt
+fatal: pathspec 'file1.txt' did not match any files
+
+C:\Users\arush\Desktop\Github>git push origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (14/14), 1.46 KiB | 187.00 KiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/11Arushi/Assignment1.git
+   357e6fa..f1924a8  main -> main

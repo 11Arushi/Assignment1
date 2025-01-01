@@ -1,0 +1,76 @@
+Microsoft Windows [Version 10.0.22631.4460]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\arush>git flow init
+
+Which branch should be used for bringing forth production releases?
+   - feature-branch
+   - feature-branch-name
+   - main
+   - master
+   - new-feature
+   - new-feature-branch
+Branch name for production releases: [main] main
+
+Which branch should be used for integration of the "next release"?
+   - feature-branch
+   - feature-branch-name
+   - master
+   - new-feature
+   - new-feature-branch
+Branch name for "next release" development: [master] develop
+Fatal: Local branch 'develop' does not exist.
+
+C:\Users\arush>git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+
+C:\Users\arush>git checkout -b develop
+Switched to a new branch 'develop'
+
+C:\Users\arush>git push origin develop
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/11Arushi/Assignment2/pull/new/develop
+remote:
+To https://github.com/11Arushi/Assignment2.git
+ * [new branch]      develop -> develop
+
+C:\Users\arush>git flow init
+
+Which branch should be used for integration of the "next release"?
+   - develop
+   - feature-branch
+   - feature-branch-name
+   - master
+   - new-feature
+   - new-feature-branch
+Branch name for "next release" development: [develop] develop
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [C:/Users/arush/.git/hooks]
+
+C:\Users\arush>git flow feature start login-feature
+Switched to a new branch 'feature/login-feature'
+
+Summary of actions:
+- A new branch 'feature/login-feature' was created, based on 'develop'
+- You are now on branch 'feature/login-feature'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish login-feature
+
+Production branch (usually master or main)
+Development branch (usually develop)
+Feature branch prefix (default: feature/)
+Release branch prefix (default: release/)
+Hotfix branch prefix (default: hotfix/)
+

@@ -1,0 +1,41 @@
+.git/hooks
+Create a file called pre-commit
+chmod +x .git/hooks/pre-commit
+
+
+#!/bin/bash
+# pre-commit hook to check for "TODO" comments
+
+if git diff --cached --name-only | grep -E '\.js$' | xargs grep -H "TODO"; then
+  echo "You have TODO comments in your code. Please remove them before committing."
+  exit 1
+fi
+
+
+Common tools for pre-commit hooks:
+ESLint: For checking JavaScript code quality.
+Prettier: For automatic code formatting.
+Black: For automatic Python code formatting.
+Flake8: For Python linting.
+
+
+Compare the experience of using the command line with the graphical interface:
+Command Line:
+
+Pros:
+Full control over Git commands.
+Faster for experienced users.
+More flexibility for advanced Git workflows.
+Cons:
+Steeper learning curve for beginners.
+Requires memorizing commands.
+Git GUI Tools (e.g., Sourcetree, GitKraken):
+
+Pros:
+Visual interface for Git actions (commits, branches, merges, etc.).
+Easier for beginners to understand the repository structure.
+Drag-and-drop functionality for Git actions like merging or rebasing.
+Cons:
+May not expose all advanced features.
+Slightly slower than using the command line for simple tasks.
+Limited in customizations or complex workflows.
